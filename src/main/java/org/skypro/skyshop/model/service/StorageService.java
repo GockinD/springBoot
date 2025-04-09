@@ -54,4 +54,5 @@ public class StorageService {
                 storageArticle.values().stream()
         ).collect(Collectors.toList());
     }
+
 }
