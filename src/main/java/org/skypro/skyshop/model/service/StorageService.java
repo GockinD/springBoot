@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -55,4 +56,7 @@ public class StorageService {
         ).collect(Collectors.toList());
     }
 
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(getStorageProduct().get(id));
+    }
 }
