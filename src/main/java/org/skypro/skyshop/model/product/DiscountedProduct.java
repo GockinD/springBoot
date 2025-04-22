@@ -6,8 +6,8 @@ public class DiscountedProduct extends Product{
     double basePrice;
     double discount;
 
-    public DiscountedProduct(String nameProduct, double basePrice, double discount, UUID id) throws IllegalArgumentException{
-        super(nameProduct, id);
+    public DiscountedProduct(String nameProduct, double basePrice, double discount) throws IllegalArgumentException{
+        super(nameProduct);
         if (basePrice <= 0) {
             throw new IllegalArgumentException("Цена должна быть больше 0");
         }
@@ -36,10 +36,5 @@ public class DiscountedProduct extends Product{
     @Override
     public boolean isSpecial() {
         return true;
-    }
-
-    @Override
-    public UUID getId() {
-        return null;
     }
 }

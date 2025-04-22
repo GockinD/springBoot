@@ -35,18 +35,18 @@ public class StorageService {
     }
 
     private void completionMap() {
-        SimpleProduct tomato3 = new SimpleProduct("Помидор80", 80, UUID.randomUUID());
-        FixPriceProduct cucumber = new FixPriceProduct("Огурец", UUID.randomUUID());
-        DiscountedProduct bread = new DiscountedProduct("Хлеб", 30, 5, UUID.randomUUID());
-        Article tomatoes = new Article("Помидоры", "Помидоры в большинстве случаев красные", UUID.randomUUID());
-        Article cucumbers = new Article("Огурцы", "Огурцы всега зеленые", UUID.randomUUID());
-        Article breads = new Article("Хлебы", "Хлебы всега сытные", UUID.randomUUID());
-        storageProduct.put(UUID.randomUUID(), tomato3);
-        storageProduct.put(UUID.randomUUID(), cucumber);
-        storageProduct.put(UUID.randomUUID(), bread);
-        storageArticle.put(UUID.randomUUID(), tomatoes);
-        storageArticle.put(UUID.randomUUID(), cucumbers);
-        storageArticle.put(UUID.randomUUID(), breads);
+        SimpleProduct tomato3 = new SimpleProduct("Помидор80", 80);
+        FixPriceProduct cucumber = new FixPriceProduct("Огурец");
+        DiscountedProduct bread = new DiscountedProduct("Хлеб", 30, 5);
+        Article tomatoes = new Article("Помидоры", "Помидоры в большинстве случаев красные");
+        Article cucumbers = new Article("Огурцы", "Огурцы всега зеленые");
+        Article breads = new Article("Хлебы", "Хлебы всега сытные");
+        storageProduct.put(tomato3.getId(), tomato3);
+        storageProduct.put(cucumber.getId(), cucumber);
+        storageProduct.put(bread.getId(), bread);
+        storageArticle.put(tomatoes.getId(), tomatoes);
+        storageArticle.put(cucumbers.getId(), cucumbers);
+        storageArticle.put(breads.getId(), breads);
     }
 
     public Collection<Searchable> allProductsAndArticle() {
