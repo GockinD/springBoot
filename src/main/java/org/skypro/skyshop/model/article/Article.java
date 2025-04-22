@@ -16,10 +16,10 @@ public class Article implements Searchable {
         return id;
     }
 
-    public Article(String articleTitle, String textArticle, UUID id) {
+    public Article(String articleTitle, String textArticle) {
         this.articleTitle = articleTitle;
         this.textArticle = textArticle;
-        this.id = id;
+        this.id = UUID.randomUUID();
     }
 
 

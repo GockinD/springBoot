@@ -1,17 +1,19 @@
 package org.skypro.skyshop.model.product;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.Objects;
 import java.util.UUID;
 
 public abstract class Product implements Searchable {
-    private String nameProduct;
+    private final String nameProduct;
     private final UUID id;
 
-    public Product(String nameProduct, UUID id) throws IllegalArgumentException {
-        this.id = id;
+    public Product(String nameProduct) throws IllegalArgumentException {
+        this.id = UUID.randomUUID();
         if (nameProduct == null || nameProduct.isBlank()) {
             throw new IllegalArgumentException("Имя продукта указано неверно");
         }
@@ -55,6 +57,8 @@ public abstract class Product implements Searchable {
         return Objects.hashCode(nameProduct);
     }
 
+    @JsonProperty
+    @Schema(description = "Уникальный идентификатор продукта", example = "550e8400-e29b-41d4-a716-446655440000")
     @Override
     public UUID getId() {
         return id;
