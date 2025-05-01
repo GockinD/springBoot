@@ -40,7 +40,7 @@ public abstract class Product implements Searchable {
     @Override
     @JsonIgnore
     public String getSearchTerm() {
-        return toString();
+        return this.nameProduct;
     }
 
     public abstract boolean isSpecial();
@@ -58,7 +58,6 @@ public abstract class Product implements Searchable {
     }
 
     @JsonProperty
-    @Schema(description = "Уникальный идентификатор продукта", example = "550e8400-e29b-41d4-a716-446655440000")
     @Override
     public UUID getId() {
         return id;

@@ -32,7 +32,7 @@ public class Article implements Searchable {
     @Override
     @JsonIgnore
     public String getSearchTerm() {
-        return toString();
+        return this.articleTitle;
     }
 
     @Override
