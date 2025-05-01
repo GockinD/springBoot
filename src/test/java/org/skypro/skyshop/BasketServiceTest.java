@@ -36,7 +36,6 @@ public class BasketServiceTest {
     void add_nonExistentProduct_and_throwingException() {
         UUID id = UUID.randomUUID();
         when(storageService.getProductById(id)).thenThrow(new NoSuchProductException());
-
         assertThrows(NoSuchProductException.class, () -> basketService.addProductInBasketById(id));
     }
 
@@ -44,9 +43,7 @@ public class BasketServiceTest {
     void add_existingProduct_callsMethodAddProduct() {
         UUID id = UUID.randomUUID();
         when(storageService.getProductById(id)).thenReturn(Optional.of(new SimpleProduct("мука", 1)));
-
         basketService.addProductInBasketById(id);
-
         verify(productBasket).addProduct(id);
     }
 
