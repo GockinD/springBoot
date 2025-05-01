@@ -5,8 +5,8 @@ import java.util.UUID;
 public class FixPriceProduct extends Product{
     private static final double PRICE = 49;
 
-    public FixPriceProduct(String nameProduct, UUID id) {
-        super(nameProduct, id);
+    public FixPriceProduct(String nameProduct) {
+        super(nameProduct);
     }
 
     @Override
@@ -22,10 +22,5 @@ public class FixPriceProduct extends Product{
     @Override
     public boolean isSpecial() {
         return true;
-    }
-
-    @Override
-    public UUID getId() {
-        return null;
     }
 }
