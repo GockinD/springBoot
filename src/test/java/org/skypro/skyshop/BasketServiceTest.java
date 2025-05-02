@@ -58,12 +58,9 @@ public class BasketServiceTest {
     void methodGetUserBasket_returnsMatchingBucket_if_ProductBasketHasProducts() {
         UUID productId1 = UUID.randomUUID();
         UUID productId2 = UUID.randomUUID();
-
         SimpleProduct product1 = new SimpleProduct("продукт 1", 10);
         SimpleProduct product2 = new SimpleProduct("продукт 2", 20);
-
         when(productBasket.getProductBasket()).thenReturn(Map.of(productId1, 2, productId2, 3));
-
         when(storageService.getProductById(productId1)).thenReturn(Optional.of(product1));
         when(storageService.getProductById(productId2)).thenReturn(Optional.of(product2));
 
